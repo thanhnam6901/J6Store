@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::body})}">
+
+<body>
+	<div class="container">
+		<div id="table">
+
+			<h2>
+				<small>CART</small>
+			</h2>
+			<hr>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th colspan="2">Sản Phẩm</th>
+						<th>Giá</th>
+						<th>Số Lượng</th>
+						<th>Thành Tiền</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Name Product</td>
+						<td><img alt="Picture" th:src="@{/assets/images/997128.jpeg}"
+							width="100" border="1"></td>
+						<td>100.0 $</td>
+						<td><input type="number"></td>
+						<td>100.0 $</td>
+					</tr>
+					<tr>
+						<td>Name Product</td>
+						<td><img alt="Picture" th:src="@{/assets/images/997128.jpeg}"
+							width="100" border="1"></td>
+						<td>100.0 $</td>
+						<td><input type="number"></td>
+						<td>100.0 $</td>
+					</tr>
+					<tr>
+						<td>Name Product</td>
+						<td><img alt="Picture" th:src="@{/assets/images/997128.jpeg}"
+							width="100" border="1"></td>
+						<td>100.0 $</td>
+						<td><input type="number"></td>
+						<td>100.0 $</td>
+					</tr>
+				</tbody>
+			</table>
+			<button class="btn btn-info">Tiếp tục mua hàng</button>
+			<button class="btn btn-danger">Xóa giỏ hàng</button>
+			<button class="btn btn-success">Check Out</button>
+		</div>
+		<div id="CheckOut">
+			<h2>
+				<small>CHECK OUT</small>
+			</h2>
+			<hr>
+			<div class="well">
+				<form class="form-horizontal" action="">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="email">Họ và tên:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="fullname"
+								placeholder="Enter Fullname">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="email">Email:</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control" id="email"
+								placeholder="Enter email">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="email">Số điện thoại:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="fullname"
+								placeholder="Enter Fullname">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="email">Địa chỉ:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="fullname"
+								placeholder="Enter Fullname">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="email">Note:</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" rows="5" id="comment"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-success">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
