@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(view)">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <title>Online Store</title>
+  
+  <link rel="stylesheet" th:href="@{/assets/css/index.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/category.css}">
+</head>
+
+<body>
+  <!-- Menu -->
+  <nav th:replace="~{/layout/menu.html}"></nav>
+  <!-- Body -->
+  <div th:replace="${view}"></div>
+  <!-- Footer -->
+  <footer class="container-fluid bg-4 text-center" th:fragment="footer">
+    <p>FPT Polytechnic &copy; 2021. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

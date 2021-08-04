@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/index :: dynamic(~{::body})}">
+
+<body>
+	<h3>
+		<small>Categories</small>
+	</h3>
+	<hr>
+	<div class="panel panel-primary">
+		<div class="panel-heading">Categories</div>
+		<div class="panel-body">
+			<form action="">
+				<div class="form-group">
+					<label for="id">ID:</label> <input type="text"
+						class="form-control" id="id">
+				</div>
+				<div class="form-group">
+					<label for="name">Name:</label> <input type="text"
+						class="form-control" id="name">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<div class="panel-footer">
+			<table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+		</div>
+	</div>
+</body>
+</html>

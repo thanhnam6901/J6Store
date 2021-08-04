@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-default" th:fragment="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">J6_SOF306</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a th:href="@{/}">HOME</a></li>
+					<li><a th:href="@{/categories}">CATEGORIES</a></li>
+					<li><a th:href="@{/ordersdetails}">ORDERS DETAILS</a></li>
+					<li><a th:href="@{/admin}">ADMIN</a></li>
+					<li><a th:href="@{/login}">SIGN IN</a></li>
+					<li><a th:href="@{/login}">SIGN OUT</a></li>
+					<li style="padding-left: 20px;"><a th:href="@{/cart/view}"><b class="glyphicon glyphicon-shopping-cart">CART</b></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>
