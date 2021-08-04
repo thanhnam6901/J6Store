@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" 
-      th:replace="~{/login/login :: dynamic(~{::body})}">
-    <head>
-        <title>Sign In</title>
-    </head>
-    <body>
-        <input type="text" placeholder="username"/>
-        <input type="password" placeholder="password"/>
-        <a href="/"><button>login</button></a>
-        <p class="message">Not registered? <a href="signUp">Create an account</a></p>
-    </body>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/login/login :: dynamic(~{::body})}">
+<head>
+<title>Sign In</title>
+</head>
+<body>
+	<i style="color: orange;" th:text="${message}">123</i> <br> <br>
+	<form th:action="@{/security/login}" method="post">
+		<input type="text" placeholder="username" name="username"/> 
+		<input type="password" placeholder="password" name="password"/>
+		<!-- 
+        <input type="checkbox"> Remember me? 
+        -->
+		<button type="submit">login</button>
+		<p class="message">
+			Not registered? <a href="signUp">Create an account</a>
+		</p>
+	</form>
+</body>
 </html>

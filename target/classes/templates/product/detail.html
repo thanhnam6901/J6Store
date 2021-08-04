@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-		th:replace="~{/categories/index :: dynamic(~{::body})}">
-<head>
-<meta charset="UTF-8">
-<title>Detail</title>
-</head>
-<body style="color: aqua;">
-	<h3>Details</h3>
-	<i>This is detail page</i>
+	th:replace="~{/layout/index :: dynamic(~{::body})}">
+
+<body>
+	<div class="container" th:object="${item}">
+		<h3>
+			<small>Chi tiết sản phẩm</small>
+		</h3>
+		<hr>
+
+		<div class="panel panel-primary text-center">
+			<div class="panel-body">
+				<img th:src="@{|/assets/images/*{image}|}" alt="Product"
+					width="50%" height="500px">
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-body">
+				<strong>Name: </strong> [[*{name}]]. <br> <strong>Price:
+				</strong> [[*{price}]] $. <br> <strong>Create Date: </strong>
+				[[*{createDate}]]. <br> <strong>Category: </strong>
+				[[*{category.name}]]. <br>
+			</div>
+			<div class="panel-footer">
+				<button class="btn btn-success">ADD TO CART</button>
+			</div>
+		</div>
+		<h3>
+			<small>Sản phẩm cùng loại</small>
+		</h3>
+		<hr>
+		<div class="panel panel-info">
+			<div class="panel-heading">Sản phẩm cùng loại</div>
+			<div class="panel-body">
+				<ul>
+					<li th:each="p : ${item.category.products}"><a
+						th:href="@{|/product/detail/${p.id}|}">[[${p.name}]]</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>

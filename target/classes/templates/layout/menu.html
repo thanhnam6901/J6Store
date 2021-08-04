@@ -10,17 +10,30 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">J6_SOF306</a>
+				<a class="navbar-brand" th:href="@{/}">J6Store</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a th:href="@{/}">HOME</a></li>
-					<li><a th:href="@{/categories}">CATEGORIES</a></li>
-					<li><a th:href="@{/ordersdetails}">ORDERS DETAILS</a></li>
-					<li><a th:href="@{/admin}">ADMIN</a></li>
-					<li><a th:href="@{/login}">SIGN IN</a></li>
-					<li><a th:href="@{/login}">SIGN OUT</a></li>
-					<li style="padding-left: 20px;"><a th:href="@{/cart/view}"><b class="glyphicon glyphicon-shopping-cart">CART</b></a></li>
+						<li><a th:href="@{/}">HOME</a></li>
+						<li><a th:href="@{/categories}">CATEGORIES</a></li>
+					<th:block th:if="${#request.remoteUser}">
+						<li><a th:href="@{/order/list}">ORDERS DETAILS</a></li>
+						<li><a th:href="@{/security/logoff}">SIGN OUT</a></li>						
+						<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+							<a th:href="@{/admin}">ADMIN</a>
+						</li>
+					</th:block>					
+					<th:block th:unless="${#request.remoteUser}">
+						<li><a th:href="@{/security/login/form}">SIGN IN</a></li>					
+					</th:block>	
+					<li style="padding-left: 20px;">
+						<a th:href="@{/cart/view}">
+							<b class="glyphicon glyphicon-shopping-cart">
+								CART
+							</b>
+							<span class="badge">{{cart.count}}</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>

@@ -1,13 +1,26 @@
 package poly.store.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import poly.store.entity.Product;
+import poly.store.service.ProductService;
 
 @Controller
 public class HomeController {
-
+	
+	@Autowired
+	ProductService productService;
+	
 	@RequestMapping("/")
-	public String home() {
+	public String home(Model model) {
+		
+//		List<Product> list = productService.findAll();
+//		model.addAttribute("items", list);
 		
 		return "home";
 	}
@@ -23,33 +36,5 @@ public class HomeController {
 		
 		return "admin/category";
 	}
-	
-	@RequestMapping("/cart/view")
-	public String cart() {
-		
-		return "cart/view";
-	}
-	
-	@RequestMapping("/cart/checkout")
-	public String checkOut() {
-		
-		return "cart/checkout";
-	}
-	
-	@RequestMapping("/ordersdetails")
-	public String order() {
-		
-		return "order/view";
-	}
-	
-	@RequestMapping("/login")
-	public String login() {
-		
-		return "login/signin";
-	}
-	@RequestMapping("/signUp")
-	public String signUp() {
-		
-		return "login/signup";
-	}
+
 }
